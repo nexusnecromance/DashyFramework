@@ -57,9 +57,9 @@ function playerupdate()
         sonic.yspeed=0
     end
 
-    if enginecollision(sonic,a,0) then
+    --[[if enginecollision(sonic,a,0) then
         sonic.isgrounded=true
-    end
+    end]]
 
     sonic.x+=sonic.xspeed
     sonic.y+=sonic.yspeed
