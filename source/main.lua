@@ -13,9 +13,9 @@ local gfx <const> = pd.graphics
 
 local function initialize()
     --playdate.display.setRefreshRate(50) -- Sets framerate to 50 fps
-    --local sonicanim = gfx.image.new("images/sonicanim_idle")
-    --[[gfx.pushContext(sonicanim)
-        gfx.image:drawCentered(sonicanim)
+    local sonicanimate = gfx.image.new("images/sonicanim_idle")
+    --[[gfx.pushContext(sonicanimate)
+        gfx.image:drawCentered(sonicanimate)
     gfx.popContext()]]
 
 
