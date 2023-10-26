@@ -17,8 +17,7 @@ local gfx <const> = pd.graphics
 
 
 -- for debug 
-Player(0,0)
-
+Player(Player.x,Player.y)
 
 function pd:init()
     
@@ -30,6 +29,9 @@ function pd:init()
         gfx.image:drawCentered(sonicanim)
     gfx.popContext()]]
 
+    --Player(0,0)
+    --Player.add()
+
 
 
 end
@@ -37,18 +39,18 @@ end
 
 
 function pd.update()
+
     gfx.clear()
     gfx.sprite.update()
     pd.timer.updateTimers()
     --pd.update()
-    --pd.draw()
+    pd.draw()
 
     pd.drawFPS(0,0)
 end
---pd.debugDraw()
 
 function pd.draw()
     --image:draw(sonic.x, sonic.y)
-    gfx.drawRect (Player.x-Player.widthrad, Player.y-Player.heightrad, Player.widthrad*2+1, Player.heightrad*2+1)
-    gfx.drawPixel(Player.x,Player.y)
+    --gfx.drawRect(Player.x-Player.widthrad, Player.y-Player.heightrad, Player.widthrad*2+1, Player.heightrad*2+1)
+    --gfx.draw
 end

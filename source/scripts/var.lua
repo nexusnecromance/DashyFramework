@@ -6,7 +6,8 @@ import "scripts/Player"
 class("Var").extends("Player")
 
 --Sonic's Player Variables
-Player = {x = 0,
+Player = {
+		 x = 0,
 		 y = 0+(240/2),
 		 xspeed = 0,
 		 yspeed = 0,
@@ -16,15 +17,15 @@ Player = {x = 0,
 		 heightrad = 19,
 		 jumpforce = 6.5,
 		 pushradius = 10,
-		 isgrounded = false,
-		 groundmode = "floor", --four modes: "floor", "rightwall", "ceiling", "leftwall"
-		 accelerationspeed = 0.046875*2,
-		 decelerationspeed = 0.5*2,
-		 friction = 0.046875*2,
-		 topspeed = 6*2,
-		 gravityforce = 0.21875*2
+		 isgrounded = false
 		 }
 
+groundmode = "floor" --four modes: "floor", "rightwall", "ceiling", "leftwall"
+accelerationspeed = 0.046875*2
+decelerationspeed = 0.5*2
+friction = 0.046875*2
+topspeed = 6*2
+gravityforce = 0.21875*2
 
 
 
