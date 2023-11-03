@@ -1,26 +1,32 @@
 --this file is for storing variables and fast calculations
 
+import "CoreLibs/math"
+import "scripts/Player"
+
+class("Var").extends("Player")
+
 --Sonic's Player Variables
-sonic = {x=0,
-		 y=0+(240/2),
-		 xspeed=0,
-		 yspeed=0,
-		 groundspeed=0,
-		 groundangle=0,
-		 widthrad=9,
-		 heightrad=19,
-		 jumpforce=6.5,
-		 pushradius=10,
-		
-		 isgrounded=false,
-		 groundmode="floor" --four modes: "floor", "rightwall", "ceiling", "leftwall"
+Player = {
+		 x = 0,
+		 y = 0+(240/2),
+		 xspeed = 0,
+		 yspeed = 0,
+		 groundspeed = 0,
+		 groundangle = 0,
+		 widthrad = 9,
+		 heightrad = 19,
+		 jumpforce = 6.5,
+		 pushradius = 10,
+		 isgrounded = false
 		 }
 
-accelerationspeed=0.046875*2
-decelerationspeed=0.5*2
-friction=0.046875*2
-topspeed=6*2
-gravityforce=0.21875*2
+groundmode = "floor" --four modes: "floor", "rightwall", "ceiling", "leftwall"
+accelerationspeed = 0.046875*2
+decelerationspeed = 0.5*2
+friction = 0.046875*2
+topspeed = 6*2
+gravityforce = 0.21875*2
+
 
 
 --A list of Sine and Cosine values for fast calculations
@@ -47,8 +53,8 @@ function angle_hex_point_direction(xdist, ydist)
 	if (xdist == 0) and (ydist == 0) then return 64 end
 		
 	--Force positive
-	xx = absolute(xdist)
-	yy = absolute(ydist)
+	xx = math.abs(xdist)
+	yy = math.abs(ydist)
 		
 	angle = 0;
 		
