@@ -1,7 +1,7 @@
 --this file is for storing variables and fast calculations
 
 import "CoreLibs/math"
-import "scripts/Player"
+import "scripts/player"
 
 class("Var").extends("Player")
 
