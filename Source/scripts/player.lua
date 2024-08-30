@@ -19,19 +19,17 @@ function Player:init(x,y)
     self:moveTo(50,100)
     self:add()
  --remove these variables once we can grab them from the var.lua 
-    Player = {
-        x = 0,
-        y = 0+(240/2),
-        xspeed = 0,
-        yspeed = 0,
-        groundspeed = 0,
-        groundangle = 0,
-        widthrad = 9,
-        heightrad = 19,
-        jumpforce = 6.5,
-        pushradius = 10,
-        isgrounded = false
-        }
+    self.x = 0
+    self.y = 0 + (240/2)
+    self.xspeed = 0
+    self.yspeed = 0
+    self.groundspeed = 0
+    self.groundangle = 0
+    self.widthrad = 9
+    self.heightrad = 19
+    self.jumpforce = 6.5
+    self.pushradius = 10
+    self.isgrounded = false
 
 end
 
