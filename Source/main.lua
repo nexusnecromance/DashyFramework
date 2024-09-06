@@ -15,22 +15,19 @@ import "scripts/collision"
 local pd <const> = playdate
 local gfx <const> = pd.graphics
 
-
--- for debug 
-Player(Player.x,Player.y)
+--local playerObject = Player(0,0)
 
 function pd:init()
     
     -- the code below is for debug playtesting before the final. do not tamper with this.
     
     --playdate.display.setRefreshRate(50) -- Sets framerate to 50 fps
-    local sonicanimate = gfx.image.new("images/sonicanim_idle")
-    --[[gfx.pushContext(sonicanimate)
-        gfx.image:drawCentered(sonicanimate)
-    gfx.popContext()]]
+    --local sonicanimate = gfx.image.new("images/sonicanim_idle")
+    --gfx.pushContext(sonicanimate)
+    --gfx.image:drawCentered(sonicanimate)
+    --gfx.popContext()
 
-    --Player(0,0)
-    --Player.add()
+    --playerObject:add()
 
 
 

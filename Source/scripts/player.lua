@@ -14,10 +14,18 @@ local gfx <const> = pd.graphics
 class("Player").extends(gfx.sprite)
 
 function Player:init(x,y)
+    Player.super.init(self)
+ 
     local playerImage = gfx.image.new("images/sonicanim_idle")
     self:setImage(playerImage)
-    self:moveTo(50,100)
-    self:add()
+
+    self:setZIndex(1000)
+    self:setCenter(0,0)
+    self:moveTo(x,y)
+
+    --gfx.pushContext(playerImage)
+    --gfx.popContext()
+    --self:add()
  --remove these variables once we can grab them from the var.lua 
     self.x = 0
     self.y = 0 + (240/2)
@@ -32,6 +40,9 @@ function Player:init(x,y)
     self.isgrounded = false
 
 end
+
+local playerObject = Player(100,100)
+playerObject:add()
 
 function Player.update()
     --sonic.xspeed -= sonic.jumpforce * math.sin(sonic.groundangle);
