@@ -1,6 +1,7 @@
 --Sonic's Function
 import "scripts/var"
 import "scripts/collision"
+import "scripts/gameScene"
 
 import "CoreLibs/graphics"
 import "CoreLibs/sprites"
@@ -15,13 +16,15 @@ class("Player").extends(gfx.sprite)
 
 function Player:init(x,y)
     Player.super.init(self)
- 
+    
+    --initialize player sprites
     local playerImage = gfx.image.new("images/sonicanim_idle")
     self:setImage(playerImage)
 
     self:setZIndex(1000)
     self:setCenter(0,0)
     self:moveTo(x,y)
+    
 
     --gfx.pushContext(playerImage)
     --gfx.popContext()
@@ -41,7 +44,7 @@ function Player:init(x,y)
 
 end
 
-local playerObject = Player(100,100)
+local playerObject = Player(0,0)
 playerObject:add()
 
 function Player.update()
@@ -99,4 +102,6 @@ function Player.update()
 
     Player.x += Player.xspeed
     Player.y += Player.yspeed
+
+    playerObject:moveTo(Player.x,Player.y)
 end
