@@ -3,22 +3,20 @@
 import "CoreLibs/math"
 import "scripts/player"
 
-class("PlayerConfig").extends("Player")
-
 --Sonic's Player Variables
-Player = {
-		 x = 0,
-		 y = 0+(240/2),
-		 xspeed = 0,
-		 yspeed = 0,
-		 groundspeed = 0,
-		 groundangle = 0,
-		 widthrad = 9,
-		 heightrad = 19,
-		 jumpforce = 6.5,
-		 pushradius = 10,
-		 isgrounded = false
-		 }
+PlayerConfig = {
+	x = 0,
+	y = 0+(240/2),
+	xspeed = 0,
+	yspeed = 0,
+	groundspeed = 0,
+	groundangle = 0,
+	widthrad = 9,
+	heightrad = 19,
+	jumpforce = 6.5,
+	pushradius = 10,
+	isgrounded = false
+}
 
 groundmode = "floor" --four modes: "floor", "rightwall", "ceiling", "leftwall"
 accelerationspeed = 0.046875*2
@@ -46,18 +44,18 @@ function angle_hex_cos(hex_ang)
 end
 --Hex angles, used for specific calculations
 anglelist = {0,0,0,0,1,1,1,1,1,1,2,2,2,2,2,2,3,3,3,3,3,3,3,4,4,4,4,4,4,5,5,5,5,5,5,6,6,6,6,6,6,6,7,7,7,7,7,7,8,8,8,8,8,8,8,9,9,9,9,9,9,10,10,10,10,10,10,10,11,11,11,11,11,11,11,12,12,12,12,12,12,12,13,13,13,13,13,13,13,14,14,14,14,14,14,14,15,15,15,15,15,15,15,16,16,16,16,16,16,16,17,17,17,17,17,17,17,17,18,18,18,18,18,18,18,19,19,19,19,19,19,19,19,20,20,20,20,20,20,20,20,21,21,21,21,21,21,21,21,21,22,22,22,22,22,22,22,22,23,23,23,23,23,23,23,23,23,24,24,24,24,24,24,24,24,24,25,25,25,25,25,25,25,25,25,25,26,26,26,26,26,26,26,26,26,27,27,27,27,27,27,27,27,27,27,28,28,28,28,28,28,28,28,28,28,28,29,29,29,29,29,29,29,29,29,29,29,30,30,30,30,30,30,30,30,30,30,30,31,31,31,31,31,31,31,31,31,31,31,31,32,32,32,32,32,32,32,0}
---Returns a hex angle representing a direction from one point to another. 
+--Returns a hex angle representing a direction from one point to another.
 --Effectively, these points are represented by [0, 0] and [xdist, ydist]
 function angle_hex_point_direction(xdist, ydist)
 	--Default
 	if (xdist == 0) and (ydist == 0) then return 64 end
-		
+
 	--Force positive
 	xx = math.abs(xdist)
 	yy = math.abs(ydist)
-		
+
 	angle = 0;
-		
+
 	--Get initial angle
 	if yy >= xx then
 		compare = (xx * 256)/yy
@@ -66,7 +64,7 @@ function angle_hex_point_direction(xdist, ydist)
 		compare = (yy * 256)/xx
 		angle = anglelist[compare]
     end
-		
+
 	--Check angle
 	if xdist <= 0 then
 		angle = -angle;
@@ -76,7 +74,7 @@ function angle_hex_point_direction(xdist, ydist)
 		angle = -angle
 		angle += 256
     end
-		
+
 	return angle
 end
 

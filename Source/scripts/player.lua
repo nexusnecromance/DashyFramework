@@ -1,5 +1,5 @@
 --Sonic's Function
-import "scripts/PlayerConfig"
+import "scripts/var"
 import "scripts/collision"
 import "scripts/gameScene"
 
@@ -12,11 +12,11 @@ import "CoreLibs/math"
 local pd <const> = playdate
 local gfx <const> = pd.graphics
 
-class("Player",PlayerConfig).extends(gfx.sprite)
+class("Player", PlayerConfig).extends(gfx.sprite)
 
 function Player:init(x,y)
     Player.super.init(self)
-    
+
     --initialize player sprites
     local playerImage = gfx.image.new("images/sonicanim_idle")
     self:setImage(playerImage)
@@ -24,25 +24,16 @@ function Player:init(x,y)
     self:setZIndex(1000)
     self:setCenter(0,0)
     self:moveTo(x,y)
-    
+
 
     --gfx.pushContext(playerImage)
     --gfx.popContext()
     --self:add()
- --remove these variables once we can grab them from the var.lua 
-    --self.x = 0
-    --self.y = 0 + (240/2)
-    --self.xspeed = 0
-    --self.yspeed = 0
-    --self.groundspeed = 0
-    --self.groundangle = 0
-    --self.widthrad = 9
-    --self.heightrad = 19
-    --self.jumpforce = 6.5
-    --self.pushradius = 10
-    --self.isgrounded = false
-
+ --remove these variables once we can grab them from the var.lua
 end
+
+-- local playerObject = Player(0,0)
+-- playerObject:add()
 
 function Player:update()
     --sonic.xspeed -= sonic.jumpforce * math.sin(sonic.groundangle);
@@ -78,7 +69,7 @@ function Player:update()
         end
     end
 
-    if (not pd.buttonIsPressed("left") and not pd.buttonIsPressed("right")) then --and not (friction > Player.groundspeed) then
+    if (not pd.buttonIsPressed("left") and not pd.buttonIsPressed("right")) then --and not (friction > self.groundspeed) then
         self.groundspeed -= math.min(math.abs(self.groundspeed), friction) * math.sin(self.groundspeed) --decelerate
     end
 
@@ -100,5 +91,5 @@ function Player:update()
     self.x += self.xspeed
     self.y += self.yspeed
 
-    self:moveTo(self.x,self.y)
+    playerObject:moveTo(self.x,self.y)
 end

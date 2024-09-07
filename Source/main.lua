@@ -11,7 +11,7 @@ import "CoreLibs/object"
 import "scripts/libraries/LDtk"
 
 -- importing custom scripts
-import "scripts/PlayerConfig"
+import "scripts/var"
 import "scripts/player"
 import "scripts/gameScene"
 import "scripts/collision"
@@ -22,7 +22,7 @@ local gfx <const> = pd.graphics
 --local playerObject = Player(0,0)
 GameScene()
 
-function pd.init()
+function pd:init()
     
     -- the code below is for debug playtesting before the final. do not tamper with this.
     
@@ -37,7 +37,7 @@ function pd.init()
 
 end
 
-function pd.update()
+function pd:update()
 
     gfx.clear()
     gfx.sprite.update()
