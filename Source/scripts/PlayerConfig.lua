@@ -3,7 +3,7 @@
 import "CoreLibs/math"
 import "scripts/player"
 
-class("Var").extends("Player")
+class("PlayerConfig").extends("Player")
 
 --Sonic's Player Variables
 Player = {

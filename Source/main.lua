@@ -1,17 +1,17 @@
 -- BEGIN INITIALIZATION FOR THE PROGRAM
 
 -- importing built in scripts
-import "CoreLibs/object"
 import "CoreLibs/graphics"
 import "CoreLibs/sprites"
 import "CoreLibs/timer"
 import "CoreLibs/math"
+import "CoreLibs/object"
 
 -- importing custom libraries
 import "scripts/libraries/LDtk"
 
 -- importing custom scripts
-import "scripts/var"
+import "scripts/PlayerConfig"
 import "scripts/player"
 import "scripts/gameScene"
 import "scripts/collision"
