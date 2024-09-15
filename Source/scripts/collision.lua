@@ -1,6 +1,10 @@
 --The collision funcion for object terrain
 import "CoreLibs/graphics"
 import "CoreLibs/sprites"
+
+--import libraries
+import "scripts/libraries/LDtk"
+
 local pd <const> = playdate
 local gfx <const> = pd.graphics
 

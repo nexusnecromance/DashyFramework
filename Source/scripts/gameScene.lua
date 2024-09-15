@@ -25,9 +25,6 @@ function GameScene:goToLevel(level_name)
     --gfx.image.removeAll()
     self.spawnX = 0
     self.spawnY = 0
-    --Player(self.spawnX,self.spawnY)
-
-    self.player = Player(self.spawnX,self.spawnY)
     
     for layer_name, layer in pairs(ldtk.get_layers(level_name)) do
         if layer.tiles then
@@ -48,5 +45,8 @@ function GameScene:goToLevel(level_name)
 
         end
     end
+
+    local playerObject = Player(self.spawnX,self.spawnY)
+    playerObject:add()
 
 end

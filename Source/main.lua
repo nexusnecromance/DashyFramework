@@ -19,7 +19,6 @@ import "scripts/collision"
 local pd <const> = playdate
 local gfx <const> = pd.graphics
 
---local playerObject = Player(0,0)
 GameScene()
 
 function pd:init()

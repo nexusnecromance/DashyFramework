@@ -12,7 +12,8 @@ import "CoreLibs/math"
 local pd <const> = playdate
 local gfx <const> = pd.graphics
 
-class("Player", PlayerConfig).extends(gfx.sprite)
+Player = {}
+class("Player").extends(gfx.sprite)
 
 function Player:init(x,y)
     Player.super.init(self)
@@ -23,13 +24,17 @@ function Player:init(x,y)
 
     self:setZIndex(1000)
     self:setCenter(0,0)
-    self:moveTo(x,y)
 
+    for k, v in pairs(PlayerConfig) do
+        self[k] = v
+    end
+
+    self:moveTo(x,y)
 
     --gfx.pushContext(playerImage)
     --gfx.popContext()
     --self:add()
- --remove these variables once we can grab them from the var.lua
+    --remove these variables once we can grab them from the var.lua
 end
 
 -- local playerObject = Player(0,0)
@@ -39,9 +44,9 @@ function Player:update()
     --sonic.xspeed -= sonic.jumpforce * math.sin(sonic.groundangle);
     --sonic.yspeed -= sonic.jumpforce * math.cos(sonic.groundangle);
 
-    print(self.x .." ".. self.y)
+    print(self.x, self.y)
 
-    if (pd.buttonIsPressed("left")) or (pd.kButtonLeft) then
+    if (pd.buttonIsPressed(pd.kButtonLeft)) then
         if (self.groundspeed > 0) then --if moving to the right
             self.groundspeed -= decelerationspeed  --decelerate
             if (self.groundspeed <= 0) then
@@ -55,7 +60,7 @@ function Player:update()
         end
     end
 
-    if (pd.buttonIsPressed("right")) or (pd.kButtonRight) then
+    if (pd.buttonIsPressed("right"))then
         if (self.groundspeed < 0) then --if moving to the left
             self.groundspeed += decelerationspeed --decelerate
             if (self.groundspeed >= 0) then
@@ -91,5 +96,5 @@ function Player:update()
     self.x += self.xspeed
     self.y += self.yspeed
 
-    playerObject:moveTo(self.x,self.y)
+    self:moveTo(self.x,self.y)
 end
