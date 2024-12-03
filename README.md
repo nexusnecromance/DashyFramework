@@ -1,5 +1,5 @@
 # Welcome to the Dashy Framework Github repository
-This project aims to deliver the core of high-speed, momentum-based platforming, akin to the classic Sonic The Hedgehog games, to [Playdate](https://play.date), a handheld video game device.
+This project aims to deliver the core of high-speed, momentum-based platforming, akin to the classic Sonic The Hedgehog games, to [Playdate](https://play.date), a handheld game system.
 
 ## Our goal involves developing, implementing, and optimizing the following:
 - Sensor-based terrain collision detection, with rotation.
