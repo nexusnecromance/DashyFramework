@@ -8,3 +8,7 @@ This project aims to deliver the core of high-speed, momentum-based platforming,
 
 ## Games that use it:
 - [Sonic 1 Playdate Deluxe](https://discord.com/channels/675983554655551509/1142444824201535589)
+<br>
+
+
+The Dashy framework and Sonic 1 Playdate Deluxe are in no way affiliated with SEGA®, Sonic Team™, or official Sonic The Hedgehog™ games made by them or entites associated with them. Sonic 1 Playdate Deluxe is a nonprofit, fanmade endeavor created to showcase Dashy Framework's capabilities.
